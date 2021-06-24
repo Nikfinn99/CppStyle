@@ -419,30 +419,17 @@ public class ClangFormatFormatter extends CodeFormatter {
 	}
 
 	public boolean runClangFormatOnSave(IResource resource) {
-		if (!enableClangFormatOnSave(resource)) {
-			return false;
+		boolean canRun = false;
+		if (enableClangFormatOnSave(resource)) {
+			if (clangFormatPath == null) {
+				err.println("clang-format command must be specified in preferences.");
+				canRun = false;
+			}
+			else {
+				canRun = true;
+			}
 		}
-
-		String clangFormat = getClangFormatPath();
-
-		if (clangFormat == null) {
-			err.println("clang-format command must be specified in preferences.");
-			return false;
-		}
-
-		File file = new File(clangFormat);
-
-		if (!file.exists()) {
-			err.println("clang-format (" + clangFormat + ") does not exist.");
-			return false;
-		}
-
-		if (!file.canExecute()) {
-			err.println("clang-format (" + clangFormat + ") is not executable.");
-			return false;
-		}
-
-		return true;
+		return canRun;
 	}
 
 	public static String getClangFormatPath() {
