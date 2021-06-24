@@ -7,10 +7,15 @@ public class CppStyleConstants {
 	public static final String PerfPageId = "org.wangzw.plugin.cppstyle.ui.CppStylePerfPage";
 
 	public static final String CLANG_FORMAT_PATH = "cppstyle.clangformat.path";
+	public static final String CLANG_FORMAT_STYLE_PATH = "cppstyle.clangformat.style.path";
 	public static final String CPPLINT_PATH = "cppstyle.cpplint.path";
 	public static final String ENABLE_CPPLINT_ON_SAVE = "cppstyle.enable.cpplint.on.save";
 	public static final String ENABLE_CLANGFORMAT_ON_SAVE = "cppstyle.enable.clangformat.on.save";
 
+	public static final String LABEL_CLANG_FORMAT_PATH = "Clang-format path:";
+	public static final String LABEL_CLANG_FORMAT_STYLE_PATH = "Clang-format style path:";
+	public static final String LABEL_CPPLINT_PATH = "Cpplint path:";
+	
 	public static final String ENABLE_CPPLINT_TEXT = "Enable cpplint";
 	public static final String ENABLE_CLANGFORMAT_TEXT = "Run clang-format on file save";
 	public static final String PROJECT_ROOT_TEXT = "Select root path for cpplint (optional):";
@@ -34,4 +39,5 @@ public class CppStyleConstants {
 	public static final String CPPLINT_OUTPUT_PARSER_ID = "org.wangzw.plugin.cppstyle.CpplintErrorParser";
 	public static final String CPPLINT_PROBLEM_ID_KEY = "id";
 	public static final String CPPLINT_ERROR_PROBLEM_ID = "org.wangzw.plugin.cppstyle.cpplint.build.categorized";
+
 }
